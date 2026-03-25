@@ -1,27 +1,12 @@
 import type { Metadata } from "next";
 
-import { Geist, Geist_Mono, Oswald } from "next/font/google";
+import { ReactNode } from "react";
+
+import { geistMono, geistSans, oswald } from "@/lib/fonts";
 
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const oswald = Oswald({
-  variable: "--font-oswald",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
-// FIX THIS SHIT
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Nivo",
   description: "Your go-to invoice generator.",
 };
@@ -29,11 +14,11 @@ const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
-      <head></head>
+      <head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} antialiased`}
       >

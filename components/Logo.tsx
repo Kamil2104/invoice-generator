@@ -1,4 +1,4 @@
-import { oswald } from "@/app/layout";
+import { oswald } from "@/lib/fonts";
 
 interface LogoProps {
   size: "small" | "medium" | "large";
