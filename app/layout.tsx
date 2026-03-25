@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Oswald } from "next/font/google";
 
 import "./globals.css";
 
@@ -14,7 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+// FIX THIS SHIT
+const metadata: Metadata = {
   title: "Nivo",
   description: "Your go-to invoice generator.",
 };
@@ -26,8 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} antialiased`}
       >
         {children}
       </body>
