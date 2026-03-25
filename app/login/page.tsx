@@ -18,7 +18,10 @@ import SubmitButton from "@/components/form/SubmitButton";
 import SocialMediaSubmitButton from "@/components/form/SocialMediaSubmitButton";
 
 const loginSchema = z.object({
-  login: z.string().min(2, "Login must be at least 2 characters long").max(100, "Login must be at most 100 characters long"),
+  login: z
+    .string()
+    .min(2, "Login must be at least 2 characters long")
+    .max(100, "Login must be at most 100 characters long"),
   password: z.string().min(6, "Password must be at least 6 characters long"),
 });
 
@@ -87,12 +90,17 @@ const Page = () => {
                   after:pointer-events-none after:absolute after:left-1.25 after:top-0.5 after:h-2.5 after:w-1.5 after:rotate-45 after:border-b-2 after:border-r-2 after:border-black after:opacity-0 after:transition-opacity
                   checked:after:opacity-100"
                 />
-                <span className="transition-colors peer-checked:text-foreground">Remember me</span>
+                <span className="transition-colors peer-checked:text-foreground">
+                  Remember me
+                </span>
               </label>
 
               <p className="text-xs md:text-sm text-foreground/70">
                 Forgot password?{" "}
-                <Link href="/newPassword" className="text-primary hover:underline">
+                <Link
+                  href="/newPassword"
+                  className="text-primary hover:underline"
+                >
                   Set a new one
                 </Link>
               </p>

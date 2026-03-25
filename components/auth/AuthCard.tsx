@@ -7,7 +7,12 @@ interface AuthCardProps {
   maxWidth?: string;
 }
 
-const AuthCard = ({ title, meta, children, maxWidth = "max-w-xl" }: AuthCardProps) => {
+const AuthCard = ({
+  title,
+  meta,
+  children,
+  maxWidth = "max-w-xl",
+}: AuthCardProps) => {
   return (
     <div
       className={`w-full ${maxWidth} rounded-2xl border border-foreground/10 bg-background/70 p-8 shadow-2xl backdrop-blur-xl md:p-10`}
