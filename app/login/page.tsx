@@ -87,7 +87,7 @@ const Page = () => {
                   checked:bg-primary checked:border-primary
                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background
                   hover:border-primary/80
-                  after:pointer-events-none after:absolute after:left-[4.2px] after:top-[1.3px] after:h-2.5 after:w-1.5 after:rotate-45 after:border-b-2 after:border-r-2 after:border-black after:opacity-0 after:transition-opacity
+                  after:pointer-events-none after:absolute after:left-[4.2px] after:top-px after:h-2.5 after:w-1.5 after:rotate-45 after:border-b-2 after:border-r-2 after:border-black after:opacity-0 after:transition-opacity
                   checked:after:opacity-100"
                 />
                 <span className="transition-colors peer-checked:text-foreground">
