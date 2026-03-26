@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
+import { useRouter } from "next/navigation";
+
 import AuthCard from "@/components/auth/AuthCard";
 import AuthHero from "@/components/auth/AuthHero";
 import AuthShell from "@/components/auth/AuthShell";
@@ -29,6 +31,8 @@ type AuthCredentialsFormProps = {
 };
 
 const AuthCredientalsForm = ({ mode }: AuthCredentialsFormProps) => {
+  const router = useRouter();
+
   const {
     register: rhfRegister, // alias to avoid confusion with /register route
     handleSubmit,
@@ -40,7 +44,10 @@ const AuthCredientalsForm = ({ mode }: AuthCredentialsFormProps) => {
   const onSubmit = (data: LoginForm) => {
     console.log("Form data:", data);
 
-    // API call to create a new user would go here
+    // API call to create a new user or changing password would go here
+    // Api call will depend on the mode
+    // For now, we'll just navigate to the dashboard after "successful" registration
+    router.push("/login");
   };
 
   return (

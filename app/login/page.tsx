@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
+import { useRouter } from "next/navigation";
+
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 
@@ -28,6 +30,8 @@ const loginSchema = z.object({
 type LoginForm = z.infer<typeof loginSchema>;
 
 const Page = () => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -40,6 +44,8 @@ const Page = () => {
     console.log("Form data:", data);
 
     // API call to authenticate user would go here
+    // For now, we'll just navigate to the dashboard after "successful" login
+    router.push("/dashboard");
   };
 
   return (
