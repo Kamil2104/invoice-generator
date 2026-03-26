@@ -98,7 +98,7 @@ const Page = () => {
               <p className="text-xs md:text-sm text-foreground/70">
                 Forgot password?{" "}
                 <Link
-                  href="/newPassword"
+                  href="/changePassword"
                   className="text-primary hover:underline"
                 >
                   Set a new one
